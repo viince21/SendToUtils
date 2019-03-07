@@ -6,7 +6,7 @@ Utilities for SendTo from Explorer Right Click
 ```
 C:\Users\<user name>\AppData\Roaming\Microsoft\Windows\SendTo
 ```
-2. Create a batch script in SendTo folder.
+2. Create a batch script in SendTo folder. Arg1 is the file/folder path, passed by SendTo.
 ```
 @echo off
 set "Python="<path to>\python.exe""
