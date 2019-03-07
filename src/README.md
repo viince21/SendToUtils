@@ -16,6 +16,8 @@ set Statement=%Command% %Script% %Arg1%
 %Statement%
 pause
 ```
-3. Right click the file in explorer.
-4. Select **Send to**.
-5. Select the batch script.
+
+## How to use
+1. Right click the file in explorer.
+2. Select **Send to**.
+3. Select the batch script.
