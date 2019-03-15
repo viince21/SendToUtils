@@ -5,6 +5,8 @@ import sys
 import os
 import datetime
 import hashlib
+import binascii
+
 
 class Hash:
     def __init__(self, fp):
@@ -27,6 +29,10 @@ class Hash:
                     break 
             return h.hexdigest()
     
+    def get_bytes(self):
+        with open(self.fp, 'rb') as f:
+            return f.read()
+    
     def get_md5(self):
         ''' get MD5 '''
         return self.get_hash(hashlib.md5())
@@ -36,12 +42,16 @@ class Hash:
     
     def get_sha256(self):
         return self.get_hash(hashlib.sha256())
+    
+    def get_crc32(self):
+        return binascii.crc32(self.get_bytes())
 
 def print_hash(fp):
     o = Hash(fp)
     print('MD5:', o.get_md5())
     print('SHA1:', o.get_sha1())
     print('SHA256:', o.get_sha256())
+    print('CRC32: {0:08x}'.format(o.get_crc32()))
 
 def print_modified_date(fp):
     ''' print modified date '''
